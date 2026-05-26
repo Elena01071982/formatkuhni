@@ -1,0 +1,1166 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:#0d1117;color:#e6edf3;overflow-x:hidden}
+
+/* ── ШАПКА ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:#161b22;
+  box-shadow:0 2px 20px rgba(0,0,0,0.50);
+  height:70px;display:flex;align-items:center;
+  padding:0 40px;justify-content:space-between;
+  border-bottom:1px solid #21262d
+}
+.logo-main{font-size:1.4rem;font-weight:800;color:#e6edf3;letter-spacing:1px;text-transform:uppercase}
+.logo-main span{color:#00d4ff}
+.logo-sub{font-size:0.6rem;font-weight:400;color:#484f58;letter-spacing:3px;text-transform:uppercase;margin-top:2px;display:block}
+nav{display:flex;gap:28px}
+nav a{text-decoration:none;color:#8b949e;font-size:0.82rem;font-weight:500;transition:color 0.3s}
+nav a:hover{color:#00d4ff}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.header-phone{font-size:1.05rem;font-weight:700;color:#e6edf3;text-decoration:none;transition:color 0.3s}
+.header-phone:hover{color:#00d4ff}
+.header-callback{font-size:0.72rem;color:#00d4ff;cursor:pointer;text-decoration:underline;border:none;background:none;font-family:'Montserrat',sans-serif;font-weight:500}
+
+/* ── HERO ── */
+.hero{
+  margin-top:70px;
+  background:linear-gradient(135deg,#0d1117 0%,#0d1f2d 30%,#0a2535 60%,#0d3040 80%,#0a3a4a 100%);
+  min-height:560px;display:flex;align-items:center;
+  position:relative;overflow:hidden
+}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:420px;height:420px;border-radius:50%;background:rgba(0,212,255,0.04);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-60px;left:30%;width:260px;height:260px;border-radius:50%;background:rgba(0,212,255,0.03);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;padding:80px 40px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;width:100%}
+.hero-tag{display:inline-block;background:rgba(0,212,255,0.10);border:1px solid rgba(0,212,255,0.25);color:#00d4ff;font-size:0.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:24px}
+.hero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:#e6edf3;line-height:1.15;margin-bottom:16px}
+.hero h1 span{color:#00d4ff}
+.hero-sub{font-size:1rem;color:#8b949e;line-height:1.7;margin-bottom:28px}
+.hero-cats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.hero-cat{background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.18);color:#8b949e;font-size:0.8rem;font-weight:500;padding:7px 14px;border-radius:4px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-blue{
+  padding:14px 32px;
+  background:linear-gradient(135deg,#00b4d8,#00d4ff);
+  color:#0d1117;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.88rem;
+  letter-spacing:1px;text-transform:uppercase;border:none;border-radius:4px;
+  cursor:pointer;text-decoration:none;display:inline-block;
+  transition:transform 0.3s,box-shadow 0.3s;
+  box-shadow:0 4px 18px rgba(0,212,255,0.30)
+}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,212,255,0.45)}
+
+/* ── ФОРМА В HERO ── */
+.hero-form-box{
+  background:#161b22;
+  border:1px solid #21262d;
+  border-radius:8px;padding:32px 28px;
+  box-shadow:0 16px 48px rgba(0,0,0,0.40)
+}
+.hero-form-box h3{font-size:1.1rem;font-weight:700;color:#e6edf3;margin-bottom:6px}
+.hero-form-box p{font-size:0.8rem;color:#8b949e;margin-bottom:20px;line-height:1.5}
+.hf-group{margin-bottom:13px}
+.hf-group input{
+  width:100%;padding:12px 16px;
+  border:1.5px solid #21262d;border-radius:5px;
+  font-family:'Montserrat',sans-serif;font-size:0.9rem;
+  color:#e6edf3;background:#0d1117;
+  outline:none;transition:border-color 0.3s
+}
+.hf-group input:focus{border-color:#00d4ff}
+.hf-group input::placeholder{color:#484f58}
+.hf-check{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px}
+.hf-check input[type="checkbox"]{
+  appearance:none;-webkit-appearance:none;
+  width:17px;height:17px;
+  border:2px solid #30363d;border-radius:3px;
+  background:#0d1117;cursor:pointer;flex-shrink:0;margin-top:2px;
+  position:relative;transition:background 0.2s,border-color 0.2s
+}
+.hf-check input[type="checkbox"]:checked{background:#00d4ff;border-color:#00d4ff}
+.hf-check input[type="checkbox"]:checked::after{content:'✓';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#0d1117;font-size:0.65rem;font-weight:800}
+.hf-check label{font-size:0.75rem;color:#8b949e;line-height:1.5;cursor:pointer}
+.hf-check label a{color:#00d4ff;text-decoration:underline}
+.btn-hero-submit{
+  width:100%;padding:14px;
+  background:linear-gradient(135deg,#00b4d8,#00d4ff);
+  color:#0d1117;font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:0.88rem;letter-spacing:1px;text-transform:uppercase;
+  border:none;border-radius:5px;cursor:pointer;
+  transition:transform 0.3s,box-shadow 0.3s;
+  box-shadow:0 4px 16px rgba(0,212,255,0.30)
+}
+.btn-hero-submit:hover{transform:translateY(-2px)}
+.btn-hero-submit:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+.form-ok{
+  display:none;margin-top:12px;padding:12px;
+  background:rgba(0,212,255,0.08);
+  border:1px solid rgba(0,212,255,0.25);
+  border-radius:5px;font-size:0.84rem;color:#00d4ff;
+  text-align:center;font-weight:600
+}
+
+/* ── ПОЛОСА ── */
+.strip{
+  background:#161b22;
+  border-top:3px solid #00d4ff;
+  padding:26px 40px;
+  border-bottom:1px solid #21262d
+}
+.strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.strip-item{display:flex;align-items:center;gap:14px}
+.strip-geo{width:42px;height:42px;flex-shrink:0;border-radius:6px}
+.sg1{background:linear-gradient(135deg,#00b4d8,#00d4ff)}
+.sg2{background:linear-gradient(135deg,#0077b6,#00d4ff);border-radius:50%}
+.sg3{background:linear-gradient(135deg,#00b4d8,#0077b6);transform:rotate(45deg);border-radius:4px}
+.sg4{background:linear-gradient(135deg,#00d4ff,#0077b6);clip-path:polygon(50% 0%,100% 100%,0% 100%)}
+.strip-text strong{display:block;font-size:0.87rem;font-weight:700;color:#e6edf3;margin-bottom:2px}
+.strip-text span{font-size:0.77rem;color:#8b949e}
+/* ── СЕКЦИИ ── */
+.section{padding:80px 40px}
+.section-inner{max-width:1200px;margin:0 auto}
+.sec-tag{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#00d4ff;margin-bottom:10px}
+.sec-title{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;color:#e6edf3;line-height:1.2;margin-bottom:12px}
+.sec-title span{color:#00d4ff}
+.sec-desc{font-size:0.95rem;color:#8b949e;line-height:1.8;max-width:580px;margin-bottom:44px}
+.divider{width:50px;height:3px;background:linear-gradient(90deg,#00d4ff,#0077b6);margin:12px 0 18px;border-radius:2px}
+
+/* ── КАРТОЧКИ ПРОДУКЦИИ ── */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.prod-card{
+  border-radius:8px;overflow:hidden;
+  background:#161b22;
+  border:1px solid #21262d;
+  transition:transform 0.3s,box-shadow 0.3s;
+  cursor:pointer;position:relative
+}
+.prod-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 36px rgba(0,0,0,0.50);
+  border-color:rgba(0,212,255,0.30)
+}
+.prod-img{
+  height:200px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#0d1f2d 0%,#0a2a3a 55%,#0d3a4a 100%);
+  position:relative;overflow:hidden
+}
+.prod-img::before{
+  content:'';position:absolute;top:-30px;right:-30px;
+  width:130px;height:130px;
+  border:3px solid rgba(0,212,255,0.08);border-radius:50%
+}
+.prod-img::after{
+  content:'';position:absolute;bottom:-25px;left:-25px;
+  width:100px;height:100px;
+  border:2px solid rgba(0,212,255,0.06);transform:rotate(45deg)
+}
+.geo-k{display:grid;grid-template-columns:52px 28px;grid-template-rows:30px 14px 20px;gap:5px;position:relative;z-index:2}
+.geo-k div{background:rgba(0,212,255,0.75);border-radius:3px}
+.geo-k div:nth-child(3){background:rgba(0,212,255,0.30)}
+.geo-w{display:flex;gap:5px;height:68px;align-items:stretch;position:relative;z-index:2}
+.geo-w div{border-radius:3px;width:22px}
+.geo-w div:nth-child(1){background:rgba(0,212,255,0.80)}
+.geo-w div:nth-child(2){background:rgba(0,212,255,0.35)}
+.geo-w div:nth-child(3){background:rgba(0,212,255,0.80)}
+.geo-d{display:flex;flex-direction:column;gap:6px;width:74px;position:relative;z-index:2}
+.geo-d div{height:9px;background:rgba(0,212,255,0.80);border-radius:2px}
+.geo-d div:nth-child(2){width:68%}
+.geo-d div:nth-child(3){width:88%}
+.geo-d div:nth-child(4){width:52%}
+.geo-d div:nth-child(5){width:78%}
+.prod-body{padding:22px}
+.prod-body h3{font-size:1.05rem;font-weight:700;color:#e6edf3;margin-bottom:8px}
+.prod-body p{font-size:0.83rem;color:#8b949e;line-height:1.65;margin-bottom:14px}
+.prod-badge{
+  position:absolute;top:14px;left:14px;
+  background:#00d4ff;color:#0d1117;
+  font-size:0.68rem;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;
+  padding:4px 10px;border-radius:20px;z-index:3
+}
+.prod-link{
+  font-size:0.78rem;font-weight:700;color:#00d4ff;
+  letter-spacing:1px;text-transform:uppercase;
+  text-decoration:none;transition:color 0.3s
+}
+.prod-link:hover{color:#e6edf3}
+
+/* ── ПРОЦЕСС ── */
+.process-bg{background:#0d1117}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:10px}
+.proc-step{
+  text-align:center;padding:30px 18px;
+  background:#161b22;
+  border-radius:8px;
+  border:1px solid #21262d;
+  transition:box-shadow 0.3s,border-color 0.3s
+}
+.proc-step:hover{
+  box-shadow:0 8px 28px rgba(0,0,0,0.40);
+  border-color:rgba(0,212,255,0.30)
+}
+.proc-num{
+  width:54px;height:54px;border-radius:50%;
+  background:linear-gradient(135deg,#00b4d8,#00d4ff);
+  margin:0 auto 16px;display:flex;
+  align-items:center;justify-content:center;
+  font-size:1.2rem;font-weight:800;color:#0d1117
+}
+.proc-step h4{font-size:0.93rem;font-weight:700;color:#e6edf3;margin-bottom:8px}
+.proc-step p{font-size:0.81rem;color:#8b949e;line-height:1.65}
+
+/* ── ПРЕИМУЩЕСТВА ── */
+.adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.adv-list{display:flex;flex-direction:column;gap:14px}
+.adv-item{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:16px 18px;
+  background:#161b22;
+  border-radius:6px;
+  border:1px solid #21262d;
+  border-left:3px solid #00d4ff;
+  transition:box-shadow 0.3s,transform 0.3s
+}
+.adv-item:hover{
+  box-shadow:0 4px 16px rgba(0,0,0,0.40);
+  transform:translateX(4px)
+}
+.adv-geo{width:34px;height:34px;flex-shrink:0;margin-top:3px}
+.ag1{background:linear-gradient(135deg,#00b4d8,#00d4ff);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%)}
+.ag2{background:linear-gradient(135deg,#0077b6,#00d4ff);border-radius:50%}
+.ag3{background:linear-gradient(135deg,#00b4d8,#0077b6);border-radius:6px}
+.ag4{background:linear-gradient(135deg,#00d4ff,#0077b6);clip-path:polygon(50% 0%,100% 100%,0% 100%)}
+.adv-text h4{font-size:0.9rem;font-weight:700;color:#e6edf3;margin-bottom:4px}
+.adv-text p{font-size:0.81rem;color:#8b949e;line-height:1.6}
+.adv-promo{
+  background:linear-gradient(135deg,#0d1f2d 0%,#0a2a3a 40%,#0d3a4a 100%);
+  border:1px solid #21262d;
+  border-radius:10px;padding:38px 32px;
+  position:relative;overflow:hidden
+}
+.adv-promo::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:180px;height:180px;border-radius:50%;
+  background:rgba(0,212,255,0.05)
+}
+.adv-promo::after{
+  content:'';position:absolute;bottom:-30px;left:-30px;
+  width:120px;height:120px;transform:rotate(45deg);
+  background:rgba(0,212,255,0.04)
+}
+.adv-promo h3{
+  font-size:1.35rem;font-weight:800;
+  color:#e6edf3;margin-bottom:10px;
+  position:relative;z-index:1
+}
+.adv-promo p{
+  font-size:0.86rem;color:#8b949e;
+  line-height:1.75;margin-bottom:22px;
+  position:relative;z-index:1
+}
+.stat-row{display:flex;gap:28px;margin-bottom:26px;position:relative;z-index:1}
+.stat-item{text-align:center}
+.stat-num{font-size:2rem;font-weight:800;color:#00d4ff;display:block}
+.stat-lbl{font-size:0.68rem;color:#8b949e;letter-spacing:1px;text-transform:uppercase}
+/* ── ФОРМА ЗАЯВКИ ── */
+.application-bg{
+  background:linear-gradient(135deg,#0d1117 0%,#0d1f2d 30%,#0a2a3a 65%,#0d3a4a 100%);
+  padding:80px 40px
+}
+.app-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 460px;gap:60px;align-items:center}
+.app-info .sec-title{color:#e6edf3}
+.app-info .sec-tag{color:#00d4ff}
+.app-info .sec-desc{color:#8b949e;margin-bottom:30px}
+.app-contacts{display:flex;flex-direction:column;gap:14px}
+.ac-row{display:flex;align-items:center;gap:12px}
+.ac-icon{
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(0,212,255,0.10);
+  border:1px solid rgba(0,212,255,0.20);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0
+}
+.ac-lbl{font-size:0.67rem;letter-spacing:2px;text-transform:uppercase;color:#484f58;margin-bottom:2px}
+.ac-val a,.ac-val span{font-size:0.92rem;font-weight:600;color:#e6edf3;text-decoration:none;transition:color 0.3s}
+.ac-val a:hover{color:#00d4ff}
+
+/* ── БОЛЬШАЯ ФОРМА ── */
+.big-form{
+  background:#161b22;
+  border:1px solid #21262d;
+  border-radius:10px;padding:38px 34px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.40)
+}
+.big-form h3{font-size:1.3rem;font-weight:800;color:#e6edf3;margin-bottom:5px}
+.form-sub{font-size:0.81rem;color:#8b949e;margin-bottom:24px}
+.fg{margin-bottom:14px}
+.fg label{
+  display:block;font-size:0.7rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:#00d4ff;margin-bottom:6px
+}
+.fg input{
+  width:100%;padding:13px 16px;
+  border:1.5px solid #21262d;border-radius:5px;
+  font-family:'Montserrat',sans-serif;font-size:0.92rem;
+  color:#e6edf3;background:#0d1117;
+  outline:none;transition:border-color 0.3s
+}
+.fg input:focus{border-color:#00d4ff}
+.fg input::placeholder{color:#484f58}
+.tg-row{
+  display:flex;align-items:center;gap:10px;
+  padding:11px 15px;
+  background:#0d1117;
+  border:1.5px solid #21262d;border-radius:5px;
+  margin-bottom:10px;cursor:pointer;
+  transition:border-color 0.3s
+}
+.tg-row:hover{border-color:rgba(0,212,255,0.30)}
+.tg-row input[type="checkbox"]{
+  appearance:none;-webkit-appearance:none;
+  width:17px;height:17px;
+  border:2px solid #30363d;border-radius:4px;
+  background:#0d1117;cursor:pointer;flex-shrink:0;
+  position:relative;transition:background 0.2s,border-color 0.2s
+}
+.tg-row input[type="checkbox"]:checked{background:#00d4ff;border-color:#00d4ff}
+.tg-row input[type="checkbox"]:checked::after{
+  content:'✓';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  color:#0d1117;font-size:0.65rem;font-weight:800
+}
+.tg-row label{font-size:0.83rem;color:#8b949e;font-weight:500;cursor:pointer}
+.pd-row{display:flex;align-items:flex-start;gap:10px;margin:14px 0 18px}
+.pd-row input[type="checkbox"]{
+  appearance:none;-webkit-appearance:none;
+  width:17px;height:17px;
+  border:2px solid #30363d;border-radius:4px;
+  background:#0d1117;cursor:pointer;flex-shrink:0;margin-top:2px;
+  position:relative;transition:background 0.2s,border-color 0.2s
+}
+.pd-row input[type="checkbox"]:checked{background:#00d4ff;border-color:#00d4ff}
+.pd-row input[type="checkbox"]:checked::after{
+  content:'✓';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  color:#0d1117;font-size:0.65rem;font-weight:800
+}
+.pd-row label{font-size:0.77rem;color:#8b949e;line-height:1.55;cursor:pointer}
+.pd-row label a{color:#00d4ff;text-decoration:underline}
+.btn-send{
+  width:100%;padding:15px;
+  background:linear-gradient(135deg,#00b4d8,#00d4ff);
+  color:#0d1117;font-family:'Montserrat',sans-serif;
+  font-weight:800;font-size:0.88rem;
+  letter-spacing:1.5px;text-transform:uppercase;
+  border:none;border-radius:5px;cursor:pointer;
+  transition:transform 0.3s,box-shadow 0.3s;
+  box-shadow:0 4px 18px rgba(0,212,255,0.30)
+}
+.btn-send:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,255,0.45)}
+.btn-send:disabled{opacity:0.45;cursor:not-allowed;transform:none}
+.send-ok{
+  display:none;margin-top:14px;padding:13px;
+  background:rgba(0,212,255,0.08);
+  border:1px solid rgba(0,212,255,0.25);
+  border-radius:5px;font-size:0.86rem;
+  color:#00d4ff;text-align:center;font-weight:600
+}
+
+/* ── ШОУРУМ ── */
+.showroom-bg{
+  background:#161b22;
+  padding:80px 40px;
+  border-top:1px solid #21262d
+}
+.sr-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.map-frame{
+  border-radius:8px;overflow:hidden;
+  border:1px solid #21262d;
+  box-shadow:0 4px 20px rgba(0,0,0,0.30)
+}
+.map-frame iframe{width:100%;height:340px;border:0;display:block}
+.sr-info{display:flex;flex-direction:column;gap:16px}
+.sr-block{
+  padding:18px 20px;
+  background:#0d1117;
+  border-radius:6px;
+  border:1px solid #21262d;
+  border-left:3px solid #00d4ff;
+  transition:box-shadow 0.3s
+}
+.sr-block:hover{box-shadow:0 4px 14px rgba(0,0,0,0.30)}
+.sr-block h4{
+  font-size:0.7rem;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:#00d4ff;margin-bottom:5px
+}
+.sr-block p,.sr-block a{
+  font-size:0.94rem;font-weight:600;
+  color:#e6edf3;text-decoration:none;
+  transition:color 0.3s;display:block
+}
+.sr-block a:hover{color:#00d4ff}
+.sr-block .sub{font-size:0.79rem;font-weight:400;color:#8b949e;margin-top:3px}
+
+/* ── ПОДВАЛ ── */
+footer{background:#0d1117;padding:48px 40px 28px;border-top:1px solid #21262d}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;margin-bottom:34px}
+.fl .logo-main{color:#e6edf3;font-size:1.2rem}
+.fl .logo-main span{color:#00d4ff}
+.fl .logo-sub{color:#484f58}
+.footer-desc{font-size:0.83rem;color:#484f58;line-height:1.75;margin-top:12px;max-width:270px}
+.fc h5{font-size:0.69rem;letter-spacing:3px;text-transform:uppercase;color:#00d4ff;margin-bottom:14px;font-weight:700}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fc ul li a{text-decoration:none;font-size:0.85rem;color:#484f58;transition:color 0.3s}
+.fc ul li a:hover{color:#e6edf3}
+.footer-bottom{
+  border-top:1px solid #21262d;
+  padding-top:20px;
+  display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:10px
+}
+.footer-copy{font-size:0.75rem;color:#484f58}
+.footer-pd a{font-size:0.75rem;color:#00d4ff;opacity:0.70;text-decoration:underline;transition:opacity 0.3s}
+.footer-pd a:hover{opacity:1}
+
+/* ── МОДАЛ ── */
+.modal{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,0.85);z-index:9999;
+  align-items:center;justify-content:center;padding:20px
+}
+.modal.open{display:flex}
+.modal-box{
+  background:#161b22;
+  border:1px solid #21262d;
+  border-radius:10px;padding:38px;
+  max-width:640px;width:100%;
+  max-height:80vh;overflow-y:auto;
+  position:relative
+}
+.modal-box h2{font-size:1.3rem;font-weight:800;color:#e6edf3;margin-bottom:16px}
+.modal-box h3{font-size:0.95rem;font-weight:700;color:#e6edf3;margin:16px 0 7px}
+.modal-box p{font-size:0.85rem;color:#8b949e;line-height:1.8;margin-bottom:10px}
+.modal-close{
+  position:absolute;top:14px;right:18px;
+  background:none;border:none;
+  font-size:1.5rem;cursor:pointer;
+  color:#484f58;transition:color 0.3s
+}
+.modal-close:hover{color:#00d4ff}
+.modal-btn{
+  margin-top:18px;padding:11px 26px;
+  background:linear-gradient(135deg,#00b4d8,#00d4ff);
+  color:#0d1117;border:none;border-radius:5px;
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;font-size:0.86rem;cursor:pointer
+}
+
+/* ── АДАПТИВ ── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-form-box{max-width:460px}
+  .adv-grid{grid-template-columns:1fr}
+  .app-inner{grid-template-columns:1fr}
+  .big-form{max-width:500px}
+}
+@media(max-width:900px){
+  .prod-grid{grid-template-columns:1fr 1fr}
+  .proc-grid{grid-template-columns:1fr 1fr}
+  .sr-inner{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .strip-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  header{padding:0 16px}
+  nav{display:none}
+  .section{padding:50px 16px}
+  .application-bg{padding:50px 16px}
+  .showroom-bg{padding:50px 16px}
+  footer{padding:36px 16px 20px}
+  .prod-grid{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr}
+  .strip-inner{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .stat-row{gap:16px}
+  .stat-num{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ ШАПКА ═══ -->
+<header>
+  <div>
+    <div class="logo-main">Формат<span>Кухни</span></div>
+    <span class="logo-sub">Кухни · Гардеробные · Шкафы-купе</span>
+  </div>
+  <nav>
+    <a href="#products">Продукция</a>
+    <a href="#process">Как мы работаем</a>
+    <a href="#advantages">Преимущества</a>
+    <a href="#contact">Контакты</a>
+    <a href="#showroom">Шоурум</a>
+  </nav>
+  <div class="header-right">
+    <a href="tel:+79094000940" class="header-phone">8 909-400-09-40</a>
+    <button class="header-callback"
+      onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Заказать звонок
+    </button>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">✦ Аксай и вся Россия</div>
+      <h1>Кухни и мебель<br><span>под заказ</span><br>от производителя</h1>
+      <p class="hero-sub">Проектируем и изготавливаем кухни, гардеробные и шкафы-купе. Бесплатный замер и дизайн-проект. Гарантия 5 лет.</p>
+      <div class="hero-cats">
+        <span class="hero-cat">Кухни</span>
+        <span class="hero-cat">Гардеробные</span>
+        <span class="hero-cat">Шкафы-купе</span>
+        <span class="hero-cat">Детские</span>
+        <span class="hero-cat">Прихожие</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-blue">Рассчитать стоимость</a>
+      </div>
+    </div>
+    <div class="hero-form-box">
+      <h3>Бесплатный расчёт</h3>
+      <p>Оставьте контакты — пришлём расчёт в течение 15 минут</p>
+      <form id="heroForm" onsubmit="submitForm(event,'heroForm','heroOk','heroBtn')">
+        <div class="hf-group">
+          <input type="text" name="name" placeholder="Ваше имя" required/>
+        </div>
+        <div class="hf-group">
+          <input type="tel" name="phone" placeholder="Ваш телефон" required/>
+        </div>
+        <div class="hf-check">
+          <input type="checkbox" id="hc1" required/>
+          <label for="hc1">Согласен(а) на
+            <a href="#" onclick="openModal(event,'pd')">обработку персональных данных</a>
+          </label>
+        </div>
+        <button class="btn-hero-submit" id="heroBtn" type="submit">Рассчитать бесплатно</button>
+        <div class="form-ok" id="heroOk">✓ Заявка принята! Свяжемся в течение 15 минут</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ПОЛОСА ═══ -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item">
+      <div class="strip-geo sg1"></div>
+      <div class="strip-text">
+        <strong>Бесплатный замер</strong>
+        <span>Выезд специалиста на дом</span>
+      </div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-geo sg2"></div>
+      <div class="strip-text">
+        <strong>Гарантия 5 лет</strong>
+        <span>На все виды продукции</span>
+      </div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-geo sg3"></div>
+      <div class="strip-text">
+        <strong>Монтаж за 1 день</strong>
+        <span>Профессиональная установка</span>
+      </div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-geo sg4"></div>
+      <div class="strip-text">
+        <strong>Работаем по всей России</strong>
+        <span>Доставка в любой регион</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ПРОДУКЦИЯ ═══ -->
+<section class="section" id="products">
+  <div class="section-inner">
+    <div class="sec-tag">✦ Наша продукция</div>
+    <h2 class="sec-title">Что мы <span>изготавливаем</span></h2>
+    <div class="divider"></div>
+    <p class="sec-desc">Вся мебель производится на собственном производстве из качественных материалов с гарантией 5 лет</p>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <span class="prod-badge">Популярное</span>
+        <div class="prod-img">
+          <div class="geo-k">
+            <div style="grid-column:1/2;grid-row:1/3"></div>
+            <div style="grid-column:2/3;grid-row:1/2"></div>
+            <div style="grid-column:1/3;grid-row:3/4"></div>
+          </div>
+        </div>
+        <div class="prod-body">
+          <h3>Кухни на заказ</h3>
+          <p>Кухни любой сложности: прямые, угловые, П-образные. Фасады МДФ, пластик, стекло. Столешницы от ЛДСП до кварца.</p>
+          <a href="#contact" class="prod-link">Рассчитать →</a>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="geo-w">
+            <div></div><div></div><div></div>
+          </div>
+        </div>
+        <div class="prod-body">
+          <h3>Шкафы-купе</h3>
+          <p>Встроенные и корпусные шкафы с раздвижными дверьми. Зеркала, ДСП, матовое стекло. Любые размеры.</p>
+          <a href="#contact" class="prod-link">Рассчитать →</a>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img">
+          <div class="geo-d">
+            <div></div><div></div><div></div><div></div><div></div>
+          </div>
+        </div>
+        <div class="prod-body">
+          <h3>Гардеробные</h3>
+          <p>Модульные системы хранения с полками, штангами, ящиками. Открытые и закрытые варианты под любое пространство.</p>
+          <a href="#contact" class="prod-link">Рассчитать →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ПРОЦЕСС ═══ -->
+<section class="section process-bg" id="process">
+  <div class="section-inner">
+    <div class="sec-tag">✦ Как мы работаем</div>
+    <h2 class="sec-title">4 шага до <span>готовой мебели</span></h2>
+    <div class="divider"></div>
+    <div class="proc-grid">
+      <div class="proc-step">
+        <div class="proc-num">1</div>
+        <h4>Заявка и замер</h4>
+        <p>Оставляете заявку — специалист приезжает на бесплатный замер в удобное время</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">2</div>
+        <h4>Дизайн-проект</h4>
+        <p>Разрабатываем 3D-проект, согласовываем материалы, фурнитуру и итоговую стоимость</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">3</div>
+        <h4>Производство</h4>
+        <p>Изготавливаем мебель на собственном производстве — срок от 14 рабочих дней</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">4</div>
+        <h4>Доставка и монтаж</h4>
+        <p>Доставляем и устанавливаем за 1 день. Убираем мусор. Принимаете готовую работу</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ПРЕИМУЩЕСТВА ═══ -->
+<section class="section" id="advantages">
+  <div class="section-inner">
+    <div class="adv-grid">
+      <div>
+        <div class="sec-tag">✦ Почему мы</div>
+        <h2 class="sec-title">Наши <span>преимущества</span></h2>
+        <div class="divider"></div>
+        <div class="adv-list">
+          <div class="adv-item">
+            <div class="adv-geo ag1"></div>
+            <div class="adv-text">
+              <h4>Собственное производство</h4>
+              <p>Изготавливаем мебель сами — без посредников. Контроль качества на каждом этапе</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-geo ag2"></div>
+            <div class="adv-text">
+              <h4>Гарантия 5 лет</h4>
+              <p>Официальная гарантия на все изделия. Устраним любой дефект бесплатно</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-geo ag3"></div>
+            <div class="adv-text">
+              <h4>Цена без наценок</h4>
+              <p>Работаем напрямую с производством — экономите до 40% по сравнению с магазинами</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-geo ag4"></div>
+            <div class="adv-text">
+              <h4>Замер и проект бесплатно</h4>
+              <p>Выезд замерщика и разработка дизайн-проекта — без оплаты и обязательств</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="adv-promo">
+        <h3>Более 500 довольных клиентов</h3>
+        <p>Работаем с 2018 года. Реализовали сотни проектов по всей России — от студий до загородных домов</p>
+        <div class="stat-row">
+          <div class="stat-item">
+            <span class="stat-num">500+</span>
+            <span class="stat-lbl">Проектов</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">7</span>
+            <span class="stat-lbl">Лет опыта</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">5</span>
+            <span class="stat-lbl">Лет гарантии</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn-blue">Получить расчёт</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ФОРМА ЗАЯВКИ ═══ -->
+<section class="application-bg" id="contact">
+  <div class="app-inner">
+    <div class="app-info">
+      <div class="sec-tag">✦ Свяжитесь с нами</div>
+      <h2 class="sec-title">Свяжитесь <span>с нами</span></h2>
+      <div class="divider"></div>
+      <p class="sec-desc">Мы ответим в течение 15 минут в рабочее время</p>
+      <div class="app-contacts">
+        <div class="ac-row">
+          <div class="ac-icon">📞</div>
+          <div>
+            <div class="ac-lbl">Телефон</div>
+            <div class="ac-val">
+              <a href="tel:+79094000940">8 909-400-09-40</a>
+              <span style="font-size:0.78rem;color:#484f58;font-weight:400">Ежедневно с 09:00 до 20:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="ac-row">
+          <div class="ac-icon">✉️</div>
+          <div>
+            <div class="ac-lbl">Email</div>
+            <div class="ac-val">
+              <a href="mailto:info@raschetkuhni24.ru">info@raschetkuhni24.ru</a>
+            </div>
+          </div>
+        </div>
+        <div class="ac-row">
+          <div class="ac-icon">🌍</div>
+          <div>
+            <div class="ac-lbl">География</div>
+            <div class="ac-val"><span>Работаем по всей России</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ФОРМА -->
+    <div class="big-form">
+      <h3>Оставьте контакты —<br>мы свяжемся с вами</h3>
+      <p class="form-sub">Ответим в течение 15 минут</p>
+      <form id="bigForm" onsubmit="submitForm(event,'bigForm','bigOk','bigBtn')">
+        <div class="fg">
+          <label>Ваше имя</label>
+          <input type="text" name="name" placeholder="Ваше имя" required/>
+        </div>
+        <div class="fg">
+          <label>Ваш телефон</label>
+          <input type="tel" name="phone" placeholder="Ваш телефон" required/>
+        </div>
+        <div style="font-size:0.78rem;color:#8b949e;margin-bottom:10px">Предпочтительнее:</div>
+        <div class="tg-row">
+          <input type="checkbox" id="tg1"/>
+          <label for="tg1">🔵 Telegram</label>
+        </div>
+        <div class="tg-row">
+          <input type="checkbox" id="tg2"/>
+          <label for="tg2">💙 MAX</label>
+        </div>
+        <div class="pd-row">
+          <input type="checkbox" id="pd1" required/>
+          <label for="pd1">Согласен(а) на
+            <a href="#" onclick="openModal(event,'pd')">обработку персональных данных</a>
+          </label>
+        </div>
+        <button class="btn-send" id="bigBtn" type="submit">Оставить заявку</button>
+        <div class="send-ok" id="bigOk">✓ Заявка принята! Свяжемся в течение 15 минут</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ШОУРУМ ═══ -->
+<section class="showroom-bg" id="showroom">
+  <div class="section-inner">
+    <div class="sec-tag">✦ Наш шоурум</div>
+    <h2 class="sec-title">Приходите <span>посмотреть</span></h2>
+    <div class="divider"></div>
+    <div class="sr-inner">
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed
+pb=!1m18!1m12!1m3!1d2706.0!2d39.8687!3d47.2673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDE2JzAyLjMiTiAzOcKwNTInMDcuMyJF!5e0!3m2!1sru!2sru!4v1600000000000"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+      <div class="sr-info">
+        <div class="sr-block">
+          <h4>Адрес</h4>
+          <p>г. Аксай, ул. Садовая, д. 1</p>
+          <p class="sub">Ростовская область</p>
+        </div>
+        <div class="sr-block">
+          <h4>Телефон</h4>
+          <a href="tel:+79094000940">8 909-400-09-40</a>
+          <p class="sub">Ежедневно с 09:00 до 20:00</p>
+        </div>
+        <div class="sr-block">
+          <h4>Email</h4>
+          <a href="mailto:info@raschetkuhni24.ru">info@raschetkuhni24.ru</a>
+        </div>
+        <div class="sr-block">
+          <h4>Мессенджеры</h4>
+          <p>Telegram · MAX · WhatsApp</p>
+          <p class="sub">Ответим быстро!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ПОДВАЛ ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="fl">
+        <div class="logo-main">Формат<span>Кухни</span></div>
+        <span class="logo-sub">Кухни · Гардеробные · Шкафы-купе</span>
+        <p class="footer-desc">Бесплатный подбор и расчёт кухонь от проверенных производителей. Работаем по всей России с 2018 года.</p>
+      </div>
+      <div class="fc">
+        <h5>Продукция</h5>
+        <ul>
+          <li><a href="#products">Кухни на заказ</a></li>
+          <li><a href="#products">Шкафы-купе</a></li>
+          <li><a href="#products">Гардеробные</a></li>
+          <li><a href="#products">Детские</a></li>
+          <li><a href="#products">Прихожие</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h5>Компания</h5>
+        <ul>
+          <li><a href="#process">Как мы работаем</a></li>
+          <li><a href="#advantages">Преимущества</a></li>
+          <li><a href="#showroom">Шоурум</a></li>
+          <li><a href="#contact">Контакты</a></li>
+          <li><a href="tel:+79094000940">8 909-400-09-40</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2024 РасчётКухни24 — Бесплатный подбор кухонь от проверенных производителей</span>
+      <div class="footer-pd">
+        <a href="#" onclick="openModal(event,'pd')">Политика конфиденциальности</a>
+        &nbsp;|&nbsp;
+        <a href="#" onclick="openModal(event,'ua')">Пользовательское соглашение</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ МОДАЛ: Политика ═══ -->
+<div class="modal" id="modalPd">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('pd')">✕</button>
+    <h2>Политика конфиденциальности</h2>
+    <p>Настоящая политика определяет порядок обработки персональных данных пользователей сайта.</p>
+    <h3>1. Сбор данных</h3>
+    <p>Мы собираем только те данные, которые вы предоставляете добровольно: имя и номер телефона для связи с вами по вашему запросу.</p>
+    <h3>2. Использование данных</h3>
+    <p>Данные используются исключительно для обратной связи и не передаются третьим лицам.</p>
+    <h3>3. Хранение данных</h3>
+    <p>Данные хранятся в защищённой системе и удаляются по вашему запросу.</p>
+    <h3>4. Контакты</h3>
+    <p>По вопросам обработки данных: info@raschetkuhni24.ru</p>
+    <button class="modal-btn" onclick="closeModal('pd')">Понятно</button>
+  </div>
+</div>
+
+<!-- ═══ МОДАЛ: Соглашение ═══ -->
+<div class="modal" id="modalUa">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('ua')">✕</button>
+    <h2>Пользовательское соглашение</h2>
+    <p>Используя данный сайт, вы соглашаетесь с условиями настоящего соглашения.</p>
+    <h3>1. Общие положения</h3>
+    <p>Сайт предназначен для информирования о товарах и услугах компании и приёма заявок от потенциальных клиентов.</p>
+    <h3>2. Интеллектуальная собственность</h3>
+    <p>Все материалы сайта являются собственностью компании. Копирование без разрешения запрещено.</p>
+    <h3>3. Ограничение ответственности</h3>
+    <p>Компания не несёт ответственности за технические сбои, находящиеся вне зоны её конт
+роля.</p>
+    <h3>4. Изменения соглашения</h3>
+    <p>Компания оставляет за собой право изменять условия соглашения. Актуальная версия всегда доступна на сайте.</p>
+    <button class="modal-btn" onclick="closeModal('ua')">Понятно</button>
+  </div>
+</div>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+/* ── Отправка форм ── */
+function submitForm(e, formId, okId, btnId) {
+  e.preventDefault();
+  const btn = document.getElementById(btnId);
+  const ok  = document.getElementById(okId);
+  const form = document.getElementById(formId);
+
+  btn.disabled = true;
+  btn.textContent = 'Отправляем...';
+
+  const data = new FormData(form);
+
+  /* === ЗАМЕНИТЕ url на ваш Telegram-бот или backend === */
+  /*
+  fetch('https://ваш-сервер/send', {
+    method: 'POST',
+    body: data
+  });
+  */
+
+  setTimeout(() => {
+    ok.style.display = 'block';
+    btn.style.display = 'none';
+    form.reset();
+  }, 900);
+}
+
+/* ── Модальные окна ── */
+function openModal(e, type) {
+  e.preventDefault();
+  document.getElementById('modal' + type.charAt(0).toUpperCase() + type.slice(1)).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(type) {
+  document.getElementById('modal' + type.charAt(0).toUpperCase() + type.slice(1)).classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* Закрытие по клику на фон */
+document.querySelectorAll('.modal').forEach(m => {
+  m.addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+/* Закрытие по Escape */
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal.open').forEach(m => {
+      m.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+});
+
+/* ── Плавный скролл для всех якорей ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+/* ── Маска телефона ── */
+document.querySelectorAll('input[type="tel"]').forEach(inp => {
+  inp.addEventListener('input', function() {
+    let v = this.value.replace(/\D/g, '');
+    if (v.startsWith('8') || v.startsWith('7')) v = v.slice(1);
+    let res = '';
+    if (v.length > 0) res  = '+7 (';
+    if (v.length >= 1) res += v.slice(0,3);
+    if (v.length >= 4) res += ') ' + v.slice(3,6);
+    if (v.length >= 7) res += '-' + v.slice(6,8);
+    if (v.length >= 9) res += '-' + v.slice(8,10);
+    this.value = res;
+  });
+});
+
+/* ── Активный пункт меню при скролле ── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? '#00d4ff' : '';
+  });
+});
+
+/* ── Анимация появления карточек ── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity    = '1';
+      entry.target.style.transform  = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.prod-card, .proc-step, .adv-item
+document.querySelectorAll('.prod-card, .proc-step, .adv-item').forEach(el => {
+    el.style.opacity   = '0';
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+/* ── Счётчики цифр в блоке преимуществ ── */
+function animateCounter(el, target, duration) {
+  let start = 0;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) {
+      el.textContent = target + (el.dataset.suffix || '');
+      clearInterval(timer);
+    } else {
+      el.textContent = Math.floor(start) + (el.dataset.suffix || '');
+    }
+  }, 16);
+}
+
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      animateCounter(el, target, 1500);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.counter').forEach(el => {
+  counterObserver.observe(el);
+});
+
+/* ── Бургер-меню для мобильных ── */
+const burger = document.querySelector('.burger');
+const navMenu = document.querySelector('nav ul');
+
+if (burger) {
+  burger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    burger.classList.toggle('active');
+  });
+}
+
+/* Закрытие меню при клике на пункт */
+document.querySelectorAll('nav ul li a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    burger.classList.remove('active');
+  });
+});
+
+/* ── Кнопка «Наверх» ── */
+const toTop = document.createElement('button');
+toTop.innerHTML = '↑';
+toTop.id = 'toTop';
+toTop.style.cssText = `
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #00d4ff;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,212,255,0.4);
+  transition: opacity 0.3s;
+`;
+document.body.appendChild(toTop);
+
+window.addEventListener('scroll', () => {
+  toTop.style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+
+toTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ── Уведомление при копировании телефона ── */
+document.querySelectorAll('a[href^="tel"]').forEach(a => {
+  a.addEventListener('click', () => {
+    const notice = document.createElement('div');
+    notice.textContent = 'Звоним...';
+    notice.style.cssText = `
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00d4ff;
+      color: #000;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      z-index: 99999;
+      font-size: 15px;
+    `;
+    document.body.appendChild(notice);
+    setTimeout(() => notice.remove(), 2000);
+  });
+});
+
+/* ── Валидация форм ── */
+document.querySelectorAll('form').forEach(form => {
+  form.querySelectorAll('input[required], select[required]').forEach(input => {
+    input.addEventListener('blur', function() {
+      if (!this.value.trim()) {
+        this.style.borderColor = '#ff4444';
+      } else {
+        this.style.borderColor = '#00d4ff';
+      }
+    });
+  });
+});
+
+</script>
+</body>
+</html>
